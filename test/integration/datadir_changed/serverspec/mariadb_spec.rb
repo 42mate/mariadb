@@ -43,6 +43,8 @@ describe 'verify the tuning attributes set in ' + includedir + '/innodb.cnf' do
     innodb_buffer_pool_size: '256M',
     innodb_flush_method: 'O_DIRECT',
     innodb_file_per_table: 1,
+    innodb_read_io_threads: 4,
+    innodb_write_io_threads: 4,
     innodb_open_files: 400
   }.each do |attribute, value|
     describe command("grep -E \"^#{attribute}\\s+\" " \

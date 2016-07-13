@@ -65,6 +65,10 @@ innodb_options['innodb_log_buffer_size'] = \
 innodb_options['innodb_file_per_table'] = \
   node['mariadb']['innodb']['file_per_table']
 innodb_options['innodb_open_files'] = node['mariadb']['innodb']['open_files']
+innodb_options['innodb_write_io_threads'] = \
+  node['mariadb']['innodb']['write_io_threads']
+innodb_options['innodb_read_io_threads'] = \
+  node['mariadb']['innodb']['read_io_threads']
 innodb_options['innodb_io_capacity'] = \
   node['mariadb']['innodb']['io_capacity']
 innodb_options['innodb_flush_method'] = \

@@ -77,6 +77,8 @@ default['mariadb']['innodb']['log_buffer_size'] = '8M'
 default['mariadb']['innodb']['file_per_table'] = '1'
 default['mariadb']['innodb']['open_files'] = '400'
 default['mariadb']['innodb']['io_capacity'] = '400'
+default['mariadb']['innodb']['read_io_threads'] = '4'
+default['mariadb']['innodb']['write_io_threads'] = '4'
 default['mariadb']['innodb']['flush_method'] = 'O_DIRECT'
 default['mariadb']['innodb']['options'] = {}
 
