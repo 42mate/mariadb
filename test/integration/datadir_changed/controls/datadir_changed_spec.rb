@@ -50,15 +50,15 @@ control 'mariadb_replication' do
     end
   end
 
-  {
-    max_binlog_size: '100M',
-    expire_logs_days: 10,
-  }.each do |attribute, value|
-    describe command("grep -E \"^#{attribute}\\s+\" " \
-                     "#{includedir}/30-replication.cnf") do
-      its(:stdout) { should match(/#{value}/) }
-    end
-  end
+  # {
+  #   max_binlog_size: '100M',
+  #   expire_logs_days: 10,
+  # }.each do |attribute, value|
+  #   describe command("grep -E \"^#{attribute}\\s+\" " \
+  #                    "#{includedir}/30-replication.cnf") do
+  #     its(:stdout) { should match(/#{value}/) }
+  #   end
+  # end
 
   describe file('/opt/mysql') do
     it { should be_directory }

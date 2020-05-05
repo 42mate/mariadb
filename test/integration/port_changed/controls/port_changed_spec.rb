@@ -49,15 +49,15 @@ control 'port_changed' do
     end
   end
 
-  {
-    max_binlog_size: '100M',
-    expire_logs_days: 10,
-  }.each do |attribute, value|
-    describe command("grep -E \"^#{attribute}\\s+\" " \
-                     "#{includedir}/30-replication.cnf") do
-      its(:stdout) { should match(/#{value}/) }
-    end
-  end
+  # {
+  #   max_binlog_size: '100M',
+  #   expire_logs_days: 10,
+  # }.each do |attribute, value|
+  #   describe command("grep -E \"^#{attribute}\\s+\" " \
+  #                    "#{includedir}/30-replication.cnf") do
+  #     its(:stdout) { should match(/#{value}/) }
+  #   end
+  # end
 
   describe command('/usr/bin/mysql -u root -pgsql' \
                    ' -D mysql -r -B -N -e "SELECT 1"') do

@@ -188,12 +188,12 @@ action :modify do
     action :add
   end
 
-  mariadb_configuration '30-replication' do
-    section 'mysqld'
-    cookbook new_resource.cookbook
-    option build_replication_options
-    action :add
-  end
+  # mariadb_configuration '30-replication' do
+  #   section 'mysqld'
+  #   cookbook new_resource.cookbook
+  #   option build_replication_options
+  #   action :add
+  # end
 
   ruby_block 'move_data_dir_if_needed' do
     block do
